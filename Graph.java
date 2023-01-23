@@ -2,25 +2,29 @@ import java.util.Scanner;
 import java.awt.*;
 import java.applet.*;
 public class Graph extends Applet{
-    int numPoints;
-    int list[];
-
+    static int numPoints;
+    static int list[] = new int[numPoints];
+    static Scanner input = new Scanner(System.in);
     public void paint(Graphics g) {
         Graph.lines(g);
         Graph.input(g);
 //        Graph.output(g);
     }
     public static void lines(Graphics g) {
-        for (int v = 25; v < 1000; v += 25) {
-            g.drawLine(v, 0, v, 1000);
-            g.drawLine(0, v, 1000, v);
+        for (int l = 25; l < 1000; l += 25) {
+            g.drawLine(l, 0, l, 1000);
+            g.drawLine(0, l, 1000, l);
         }
         g.fillRect(498, 0, 4, 1000);
         g.fillRect(0, 498, 1000, 4);
     }
     public static void input(Graphics g){
-        Scanner scan = new Scanner(System.in);
         System.out.println("Input how many points will be graphed ===>>");
+        numPoints = input.nextInt();
+        for (int l = 1; l < numPoints; l++) {
+            System.out.println("Input x coordinate #" + l +" ===>>");
+            list[(l-1)] = input.nextInt();
+        }
     }
 }
 /*Notes
