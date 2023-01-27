@@ -53,7 +53,7 @@ public class Graph extends Applet{
     }
 }
 /*Notes:
-add 500 to 'x's and 'y's
-check if coords can be negative
-add check for 1 point and error message
+fix mystery loop
+    only loops after going to applet
+    no visible source of loop
  */
