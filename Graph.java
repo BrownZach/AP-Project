@@ -1,14 +1,14 @@
 import java.util.Scanner;
 import java.awt.*;
 import java.applet.*;
-public class Graph extends Applet{
+public class Graph extends Applet {
     static int numCoords;
     static int list[];
     static Scanner input = new Scanner(System.in);
     public void paint(Graphics g) {
-        Graph.lines(g);
-        Graph.input(g);
-        Graph.output(g);
+        lines(g);
+        input(g);
+        output(g);
     }
     public static void lines(Graphics g) {
         for (int l = 25; l < 1000; l += 25) {
@@ -18,7 +18,7 @@ public class Graph extends Applet{
         g.fillRect(498, 0, 4, 1000);
         g.fillRect(0, 498, 1000, 4);
     }
-    public static void input(Graphics g){
+    public static void input(Graphics g) {
         System.out.println("Input how many points will be graphed ===>>");
         numCoords = 2 * input.nextInt();
         list = new int[numCoords];
@@ -32,7 +32,7 @@ public class Graph extends Applet{
     }
     public static void output(Graphics g) {
         System.out.println("Now outputting, please wait...");
-        if (numCoords / 2 < 2){
+        if (numCoords / 2 < 2) {
             System.out.println("Error, cannot create a graph with 1 or fewer points");
         }
         else {
@@ -56,4 +56,6 @@ public class Graph extends Applet{
 fix mystery loop
     only loops after going to applet
     no visible source of loop
+    when going to applet during input applet is blank
+    :(
  */
