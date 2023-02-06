@@ -37,7 +37,7 @@ public class Graph extends Applet {
         }
         else {
             if (numCoords / 2 > 2) {
-                for (int l = 0; l < numCoords; l++) {
+                for (int l = 0; l < numCoords / 2; l++) {
                     g.setColor(Color.black);
                     g.drawLine(list[l] + 500, -list[l + 1] + 500, list[l + 2] + 500, -list[l + 3] + 500);
                 }
@@ -57,5 +57,6 @@ fix mystery loop
     only loops after going to applet
     no visible source of loop
     when going to applet during input applet is blank
-    :(
+    after successful graph, minimizing and going back causes graph to clear and input to loop
+fix inverted y coords
  */
