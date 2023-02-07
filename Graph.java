@@ -22,12 +22,12 @@ public class Graph extends Applet {
         System.out.println("Input how many points will be graphed ===>>");
         numCoords = 2 * input.nextInt();
         list = new int[numCoords];
-        for (int l = 0; l < numCoords / 2;) {
+        for (int l = 0; l < numCoords / 2; l++) {
             System.out.println("Input x coordinate #" + (l + 1) +" ===>>");
             list[l] = input.nextInt();
-            l ++;
-            System.out.println("Input y coordinate #" + (l) +" ===>>");
-            list[l] = input.nextInt();
+            int k = l++;
+            System.out.println("Input y coordinate #" + (k + 1) +" ===>>");
+            list[k] = input.nextInt();
         }
     }
     public static void output(Graphics g) {
@@ -36,7 +36,7 @@ public class Graph extends Applet {
             System.out.println("Error, cannot create a graph with 1 or fewer points");
         }
         else {
-            if (numCoords / 2 > 2) {
+            if (numCoords / 2> 2) {
                 for (int l = 0; l < numCoords / 2; l++) {
                     g.setColor(Color.black);
                     g.drawLine(list[l] + 500, -list[l + 1] + 500, list[l + 2] + 500, -list[l + 3] + 500);
@@ -45,7 +45,7 @@ public class Graph extends Applet {
             else {
                 if (numCoords / 2 == 2) {
                     g.setColor(Color.black);
-                    g.drawLine(list[0] + 500, -list[1] + 500, list[2] + 500, -list[3] + 500);
+                    g.drawLine(list[0] + 500, -(list[1]) + 500, list[2] + 500, -(list[3]) + 500);
                 }
             }
             System.out.println("Graphing completed");
@@ -58,5 +58,6 @@ fix mystery loop
     no visible source of loop
     when going to applet during input applet is blank
     after successful graph, minimizing and going back causes graph to clear and input to loop
-fix inverted y coords
+    ?
+fix inverted y coords?
  */
