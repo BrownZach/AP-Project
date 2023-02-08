@@ -22,12 +22,13 @@ public class Graph extends Applet {
         System.out.println("Input how many points will be graphed ===>>");
         numCoords = 2 * input.nextInt();
         list = new int[numCoords];
-        for (int l = 0; l < numCoords / 2; l++) {
-            System.out.println("Input x coordinate #" + (l + 1) +" ===>>");
+        int k = 0;
+        for (int l = 0; k < numCoords / 2; k++, l++) {
+            System.out.println("Input x coordinate #" + (k + 1) +" ===>>");
             list[l] = input.nextInt();
-            int k = l++;
+            l++;
             System.out.println("Input y coordinate #" + (k + 1) +" ===>>");
-            list[k] = input.nextInt();
+            list[l] = input.nextInt();
         }
     }
     public static void output(Graphics g) {
@@ -59,5 +60,4 @@ fix mystery loop
     when going to applet during input applet is blank
     after successful graph, minimizing and going back causes graph to clear and input to loop
     ?
-fix inverted y coords?
  */
