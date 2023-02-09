@@ -53,11 +53,3 @@ public class Graph extends Applet {
         }
     }
 }
-/*Notes:
-fix mystery loop
-    only loops after going to applet
-    no visible source of loop
-    when going to applet during input applet is blank
-    after successful graph, minimizing and going back causes graph to clear and input to loop
-    ?
- */
